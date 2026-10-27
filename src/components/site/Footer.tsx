@@ -1,0 +1,5 @@
+import { Link } from '@tanstack/react-router';
+import { ArrowUpRight } from 'lucide-react';
+import { Logo } from './Header';
+import { SITE } from '@/lib/site';
+export function Footer() {return <footer className="site-footer"><div className="site-container"><div className="footer-top"><div><Logo/><p>Independent minds. Exceptional websites.<br/>Founded & owned by {SITE.owner}.</p></div><div><span className="eyebrow">Have something in mind?</span><a className="footer-email" href={`mailto:${SITE.email}`}>{SITE.email}<ArrowUpRight/></a><p>{SITE.location} / Working worldwide</p></div></div><nav className="footer-nav" aria-label="Footer navigation">{[{to:'/',label:'Home'},{to:'/services',label:'Services'},{to:'/portfolio',label:'Work'},{to:'/about',label:'Studio'},{to:'/reviews',label:'Reviews'},{to:'/contact',label:'Contact'}].map(n=><Link key={n.to} to={n.to}>{n.label}<ArrowUpRight/></Link>)}</nav><div className="footer-bottom"><p>© {new Date().getFullYear()} {SITE.name}</p><p>Est. {SITE.founded} · Made in Hyderabad, for the world.</p></div></div></footer>;}
