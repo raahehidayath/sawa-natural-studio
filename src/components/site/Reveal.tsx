@@ -37,13 +37,13 @@ export function PageHero({ eyebrow, title, text }: { eyebrow: string; title: Rea
           if (router.history.canGoBack()) router.history.back();
           else void router.navigate({ to: "/" });
         }}><span className="page-back-icon"><ArrowLeft /></span><span>Back</span></Button>
-        <Reveal>
+        <div className="page-hero-copy">
           <span className="eyebrow">
             {eyebrow}
           </span>
           <h1>{title}</h1>
           <p>{text}</p>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

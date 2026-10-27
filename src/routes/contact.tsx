@@ -34,11 +34,11 @@ function Contact() {
     const r = schema.safeParse(f);
     if (!r.success) return setErr(r.error.issues[0]?.message ?? "Please check the form");
     setErr(""); setState("busy");
-    const [mailed] = await Promise.all([
+    const [mailed, saved] = await Promise.all([
       sendToInbox({ ...r.data }).catch(() => false),
       supabase.from("contact_messages").insert({ ...r.data, country: r.data.country || null }),
     ]);
-    if (!mailed) { setState("idle"); return setErr("Something went wrong. Please email us directly."); }
+    if (!mailed && saved.error) { setState("idle"); return setErr("Something went wrong. Please email us directly."); }
     setState("done");
   };
 
