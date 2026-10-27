@@ -95,3 +95,33 @@
 .home-hero .studio-button{background:var(--gradient-hot);background-size:200% 200%;animation:hue-flow 6s ease-in-out infinite;box-shadow:0 16px 36px -14px color-mix(in oklab,var(--hot-1) 55%,transparent)}
 .ticker-strip{background:var(--gradient-hot);background-size:200% 200%;animation:hue-flow 14s ease-in-out infinite}
 .cta-band{background:var(--gradient-hot);background-size:200% 200%;animation:hue-flow 16s ease-in-out infinite}
+
+/* ===== Emerald & Champagne Gold theme ===== */
+:root{
+ --background:oklch(.985 .008 85);--foreground:oklch(.3 .02 160);--ink:oklch(.22 .03 162);--card:oklch(.995 .004 85);
+ --primary:oklch(.42 .1 158);--primary-foreground:oklch(.985 .01 85);--secondary:oklch(.955 .018 85);--accent:oklch(.92 .06 85);
+ --muted-foreground:oklch(.5 .02 150);--border:oklch(.88 .02 85);
+ --gold:oklch(.76 .11 80);--gold-deep:oklch(.62 .11 70);
+ --hot-1:oklch(.45 .11 158);--hot-2:oklch(.78 .11 82);--hot-3:oklch(.32 .08 165);
+ --gradient-hot:linear-gradient(120deg,var(--hot-3),var(--hot-1) 40%,var(--hot-2) 75%,var(--hot-1));
+ --gradient-gold:linear-gradient(110deg,var(--gold-deep),var(--gold) 35%,oklch(.9 .07 90) 50%,var(--gold) 65%,var(--gold-deep));
+ --shadow-glow:0 18px 45px -22px color-mix(in oklab,var(--primary) 45%,transparent);
+ --work-rose:oklch(.93 .04 80);--work-rose-ink:oklch(.4 .08 70);
+}
+.brand-mark{background:none;box-shadow:none;animation:none;width:46px;height:46px}
+.brand-mark img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 14px color-mix(in oklab,var(--primary) 35%,transparent))}
+.brand-name{font-family:"Cormorant Garamond",serif;font-style:normal;font-weight:600;letter-spacing:.02em;font-size:30px}
+.brand-sub{letter-spacing:.42em;font-size:8px;color:var(--gold-deep)}
+.home-hero .hero-enterprises,.hero-enterprises{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;letter-spacing:.01em;background:var(--gradient-gold);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 10px 24px color-mix(in oklab,var(--gold-deep) 30%,transparent));animation:rise 1s var(--ease) .12s both,shine 6s linear infinite}
+.home-hero h1>span:first-child{font-family:"Cormorant Garamond",serif;font-style:normal;font-weight:600;letter-spacing:.01em}
+@keyframes shine{to{background-position:-250% 0}}
+/* small natural service boxes */
+.tool-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.tool-card{padding:16px 14px;text-align:center;border-radius:16px;background:color-mix(in oklab,var(--card) 80%,var(--secondary))}
+.tool-card:hover{border-color:var(--gold)}
+.tool-icon,.tool-brand-icon{width:44px;height:44px;margin:0 auto 10px;border-radius:12px;background:color-mix(in oklab,var(--brand-c) 12%,var(--card));color:var(--brand-c);border:1px solid color-mix(in oklab,var(--brand-c) 22%,transparent)}
+.tool-icon svg,.tool-brand-icon svg{width:22px;height:22px}
+.tool-card h3{font-size:14px;font-weight:600}
+.tool-card p{font-size:11px;line-height:1.45;margin-top:4px}
+@media (max-width:1100px){.tool-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:700px){.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

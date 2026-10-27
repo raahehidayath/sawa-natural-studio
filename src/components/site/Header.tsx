@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { ArrowUpRight, X, Menu, Asterisk } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SITE } from '@/lib/site';
+import logo from '@/assets/logo.png';
 const NAV = [{to:'/',label:'Home'},{to:'/services',label:'Services'},{to:'/portfolio',label:'Work'},{to:'/about',label:'Studio'},{to:'/reviews',label:'Reviews'},{to:'/contact',label:'Contact'}] as const;
-export function Logo() { return <Link to="/" className="brand" aria-label={`${SITE.name} home`}><span className="brand-mark"><span>S</span><Asterisk className="brand-spark"/></span><span className="brand-word"><span className="brand-name">Sawaa</span><span className="brand-sub">Enterprises</span></span></Link>; }
+export function Logo() { return <Link to="/" className="brand" aria-label={`${SITE.name} home`}><span className="brand-mark"><img src={logo} alt="" width={46} height={46}/></span><span className="brand-word"><span className="brand-name">Sawaa</span><span className="brand-sub">Enterprises</span></span></Link>; }
 export function Header() {
  const [open,setOpen] = useState(false);
  const pathname = useRouterState({select:s=>s.location.pathname});
