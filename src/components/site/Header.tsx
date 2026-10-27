@@ -1,6 +1,6 @@
 import { Link, useRouterState } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
-import { ArrowUpRight, X, Menu, Asterisk } from 'lucide-react';
+import { ArrowUpRight, X, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SITE } from '@/lib/site';
 import logo from '@/assets/logo.png';
