@@ -21,11 +21,11 @@ export function QuickContact({ title = 'Tell us your idea.' }: { title?: string 
     const r = schema.safeParse(f);
     if (!r.success) return setErr(r.error.issues[0]?.message ?? 'Please check the form');
     setErr(''); setState('busy');
-    const [mailed] = await Promise.all([
+    const [mailed, saved] = await Promise.all([
       sendToInbox({ ...r.data, project_type: 'Quick enquiry' }).catch(() => false),
       supabase.from('contact_messages').insert({ ...r.data, project_type: 'Quick enquiry', country: null }),
     ]);
-    if (!mailed) { setState('idle'); return setErr('Could not send. Please email sawaaenterprises@gmail.com'); }
+    if (!mailed && saved.error) { setState('idle'); return setErr('Could not send. Please email sawaaenterprises@gmail.com'); }
     setState('done');
   };
   return (
